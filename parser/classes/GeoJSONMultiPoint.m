@@ -1,5 +1,5 @@
 //
-//  GeoJSONMultiPoint.h
+//  GeoJSONMultiPoint.m
 //  geojson-parser
 //
 //  Created by JM on 03/07/12.

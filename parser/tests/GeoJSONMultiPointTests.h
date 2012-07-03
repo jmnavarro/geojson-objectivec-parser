@@ -8,6 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface GeoJSONMultiPointTests : SenTestCase
+@class GeoJSONMultiPoint;
+
+@interface GeoJSONMultiPointTests : SenTestCase {
+    GeoJSONMultiPoint *_fixture;
+}
 
 @end

@@ -10,8 +10,8 @@
 
 @implementation GeoJSONPoint
 
-@synthesize latitude = _latitude;
 @synthesize longitude = _longitude;
+@synthesize latitude = _latitude;
 @synthesize altitude = _altitude;
 
 

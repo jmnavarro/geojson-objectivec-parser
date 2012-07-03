@@ -1,5 +1,5 @@
 //
-//  GeoJSONPointTests.h
+//  GeoJSONPolygonTests.h
 //  geojson-parser
 //
 //  Created by JM on 03/07/12.
@@ -8,10 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@class GeoJSONPoint;
+@class GeoJSONPolygon;
 
-@interface GeoJSONPointTests : SenTestCase {
-    GeoJSONPoint *_fixture;
+@interface GeoJSONPolygonTests : SenTestCase {
+    GeoJSONPolygon *_fixture;
 }
 
 @end

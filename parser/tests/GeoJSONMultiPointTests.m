@@ -21,7 +21,7 @@
 
 - (void)tearDown
 {
-    // Tear-down code here.
+    [_fixture release];
     
     [super tearDown];
 }
@@ -32,16 +32,16 @@
     NSArray *p2 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:0.25], nil];
     NSArray *coords = [NSArray arrayWithObjects:p1, p2, nil];
     
-    GeoJSONMultiPoint *multi = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
+    _fixture = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
 
-    STAssertNotNil(multi, @"MultiPoint can't be nil");
-    STAssertEquals(2, multi.count, @"Count is not valid");
+    STAssertNotNil(_fixture, @"MultiPoint can't be nil");
+    STAssertEquals(2, _fixture.count, @"Count is not valid");
     
-    GeoJSONPoint *p1a = [multi pointAt:0];
+    GeoJSONPoint *p1a = [_fixture pointAt:0];
     STAssertEqualsWithAccuracy(102.0, p1a.longitude, 0.001, @"Longitude is not valid");
     STAssertEqualsWithAccuracy(0.5, p1a.latitude, 0.001, @"Longitude is not valid");
     
-    GeoJSONPoint *p2a = [multi pointAt:1];
+    GeoJSONPoint *p2a = [_fixture pointAt:1];
     STAssertEqualsWithAccuracy(2.0, p2a.longitude, 0.001, @"Longitude is not valid");
     STAssertEqualsWithAccuracy(0.25, p2a.latitude, 0.001, @"Longitude is not valid");
 }
@@ -51,10 +51,10 @@
 {
     NSArray *coords = [NSArray array];
     
-    GeoJSONMultiPoint *multi = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
+    _fixture = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
     
-    STAssertNotNil(multi, @"MultiPoint can't be nil");
-    STAssertEquals(0, multi.count, @"Count is not valid");    
+    STAssertNotNil(_fixture, @"MultiPoint can't be nil");
+    STAssertEquals(0, _fixture.count, @"Count is not valid");    
 }
 
 
@@ -64,19 +64,17 @@
     NSArray *p2 = [NSArray array];
     NSArray *coords = [NSArray arrayWithObjects:p1, p2, nil];
     
-    GeoJSONMultiPoint *multi = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
+    _fixture = [[GeoJSONMultiPoint alloc] initWithGeoJSONCoordinates:coords];
     
-    STAssertNotNil(multi, @"MultiPoint can't be nil");
-    STAssertEquals(1, multi.count, @"Count is not valid");
+    STAssertNotNil(_fixture, @"MultiPoint can't be nil");
+    STAssertEquals(1, _fixture.count, @"Count is not valid");
     
-    GeoJSONPoint *p1a = [multi pointAt:0];
+    GeoJSONPoint *p1a = [_fixture pointAt:0];
     STAssertEqualsWithAccuracy(102.0, p1a.longitude, 0.001, @"Longitude is not valid");
     STAssertEqualsWithAccuracy(0.5, p1a.latitude, 0.001, @"Longitude is not valid");
     
-    STAssertNil([multi pointAt:1], @"Point #2 must be nil");
+    STAssertNil([_fixture pointAt:1], @"Point #2 must be nil");
 }
-
-
 
 
 @end

@@ -20,7 +20,7 @@
 
 - (void)tearDown
 {
-    // Tear-down code here.
+    [_fixture release];
     
     [super tearDown];
 }
@@ -29,12 +29,13 @@
 {
     NSArray *coord = [NSArray arrayWithObjects:[NSNumber numberWithDouble:102.0], [NSNumber numberWithDouble:0.5], nil];
     
-    GeoJSONPoint *point = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
+    _fixture = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
 
-    STAssertNotNil(point, @"Point can't be nil");
-    STAssertEqualsWithAccuracy(102.0, point.longitude, 0.001, @"Longitude is not valid");
-    STAssertEqualsWithAccuracy(0.5, point.latitude, 0.001, @"Longitude is not valid");
-    STAssertEqualsWithAccuracy(-1.0, point.altitude, 0.001, @"Altitude is not valid");
+    STAssertNotNil(_fixture, @"Point can't be nil");
+    STAssertEqualsWithAccuracy(102.0, _fixture.longitude, 0.001, @"Longitude is not valid");
+    STAssertEqualsWithAccuracy(0.5, _fixture.latitude, 0.001, @"Longitude is not valid");
+    STAssertEqualsWithAccuracy(-1.0, _fixture.altitude, 0.001, @"Altitude is not valid");
+    
 }
 
 
@@ -42,19 +43,19 @@
 {
     NSArray *coord = [NSArray arrayWithObjects:[NSNumber numberWithDouble:102.0], [NSNumber numberWithDouble:0.5], [NSNumber numberWithDouble:1.1], nil];
     
-    GeoJSONPoint *point = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
+    _fixture = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
     
-    STAssertNotNil(point, @"Point can't be nil");
-    STAssertEqualsWithAccuracy(102.0, point.longitude, 0.001, @"Longitude is not valid");
-    STAssertEqualsWithAccuracy(0.5, point.latitude, 0.001, @"Longitude is not valid");
-    STAssertEqualsWithAccuracy(1.1, point.altitude, 0.001, @"Altitude is not valid");
+    STAssertNotNil(_fixture, @"Point can't be nil");
+    STAssertEqualsWithAccuracy(102.0, _fixture.longitude, 0.001, @"Longitude is not valid");
+    STAssertEqualsWithAccuracy(0.5, _fixture.latitude, 0.001, @"Longitude is not valid");
+    STAssertEqualsWithAccuracy(1.1, _fixture.altitude, 0.001, @"Altitude is not valid");
 }
 
 
 - (void)testShouldFailIfCoordinatesAreNil
 {
-    GeoJSONPoint *point = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:nil];
-    STAssertNil(point, @"Point must be nil");
+    _fixture = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:nil];
+    STAssertNil(_fixture, @"Point must be nil");
 }
 
 
@@ -62,11 +63,11 @@
 {
     NSArray *coord = [NSArray arrayWithObjects:[NSNumber numberWithDouble:102.0], nil];
 
-    GeoJSONPoint *point = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
-    STAssertNil(point, @"Point must be nil");
+    _fixture = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:coord];
+    STAssertNil(_fixture, @"Point must be nil");
     
-    coord = [NSArray array];
-    STAssertNil(point, @"Point must be nil");
+    _fixture = [[GeoJSONPoint alloc] initWithGeoJSONCoordinates:[NSArray array]];
+    STAssertNil(_fixture, @"Point must be nil");
 }
 
 
