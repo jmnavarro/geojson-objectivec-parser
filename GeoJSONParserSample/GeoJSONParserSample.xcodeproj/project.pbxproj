@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88327A0415A334CA00DB8F3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A0315A334CA00DB8F3A /* UIKit.framework */; };
+		88327A0615A334CA00DB8F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A0515A334CA00DB8F3A /* Foundation.framework */; };
+		88327A0815A334CA00DB8F3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A0715A334CA00DB8F3A /* CoreGraphics.framework */; };
+		88327A0E15A334CA00DB8F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88327A0C15A334CA00DB8F3A /* InfoPlist.strings */; };
+		88327A1015A334CA00DB8F3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A0F15A334CA00DB8F3A /* main.m */; };
+		88327A1415A334CA00DB8F3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A1315A334CA00DB8F3A /* AppDelegate.m */; };
+		88327A1715A334CA00DB8F3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A1615A334CA00DB8F3A /* ViewController.m */; };
+		88327A1A15A334CA00DB8F3A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88327A1815A334CA00DB8F3A /* ViewController.xib */; };
+		88327A2215A334CA00DB8F3A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A2115A334CA00DB8F3A /* SenTestingKit.framework */; };
+		88327A2315A334CA00DB8F3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A0315A334CA00DB8F3A /* UIKit.framework */; };
+		88327A2415A334CA00DB8F3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88327A0515A334CA00DB8F3A /* Foundation.framework */; };
+		88327A2C15A334CA00DB8F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88327A2A15A334CA00DB8F3A /* InfoPlist.strings */; };
+		88327A4215A3365700DB8F3A /* GeoJSONMultiPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A3F15A3365700DB8F3A /* GeoJSONMultiPoint.m */; };
+		88327A4315A3365700DB8F3A /* GeoJSONPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A4115A3365700DB8F3A /* GeoJSONPoint.m */; };
+		88327A4815A3372400DB8F3A /* GeoJSONMultiPointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A4515A3372400DB8F3A /* GeoJSONMultiPointTests.m */; };
+		88327A4915A3372400DB8F3A /* GeoJSONPointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A4715A3372400DB8F3A /* GeoJSONPointTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88327A2515A334CA00DB8F3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 883279F615A334C900DB8F3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 883279FE15A334CA00DB8F3A;
+			remoteInfo = GeoJSONParserSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		883279FF15A334CA00DB8F3A /* GeoJSONParserSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoJSONParserSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88327A0315A334CA00DB8F3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88327A0515A334CA00DB8F3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88327A0715A334CA00DB8F3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88327A0B15A334CA00DB8F3A /* GeoJSONParserSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeoJSONParserSample-Info.plist"; sourceTree = "<group>"; };
+		88327A0D15A334CA00DB8F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88327A0F15A334CA00DB8F3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88327A1115A334CA00DB8F3A /* GeoJSONParserSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoJSONParserSample-Prefix.pch"; sourceTree = "<group>"; };
+		88327A1215A334CA00DB8F3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88327A1315A334CA00DB8F3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88327A1515A334CA00DB8F3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88327A1615A334CA00DB8F3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88327A1915A334CA00DB8F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		88327A2015A334CA00DB8F3A /* GeoJSONParserSampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoJSONParserSampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88327A2115A334CA00DB8F3A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		88327A2915A334CA00DB8F3A /* GeoJSONParserSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeoJSONParserSampleTests-Info.plist"; sourceTree = "<group>"; };
+		88327A2B15A334CA00DB8F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88327A3E15A3365700DB8F3A /* GeoJSONMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONMultiPoint.h; path = ../parser/classes/GeoJSONMultiPoint.h; sourceTree = "<group>"; };
+		88327A3F15A3365700DB8F3A /* GeoJSONMultiPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONMultiPoint.m; path = ../parser/classes/GeoJSONMultiPoint.m; sourceTree = "<group>"; wrapsLines = 0; };
+		88327A4015A3365700DB8F3A /* GeoJSONPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONPoint.h; path = ../parser/classes/GeoJSONPoint.h; sourceTree = "<group>"; };
+		88327A4115A3365700DB8F3A /* GeoJSONPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPoint.m; path = ../parser/classes/GeoJSONPoint.m; sourceTree = "<group>"; };
+		88327A4415A3372400DB8F3A /* GeoJSONMultiPointTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONMultiPointTests.h; path = ../../parser/tests/GeoJSONMultiPointTests.h; sourceTree = "<group>"; };
+		88327A4515A3372400DB8F3A /* GeoJSONMultiPointTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONMultiPointTests.m; path = ../../parser/tests/GeoJSONMultiPointTests.m; sourceTree = "<group>"; };
+		88327A4615A3372400DB8F3A /* GeoJSONPointTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONPointTests.h; path = ../../parser/tests/GeoJSONPointTests.h; sourceTree = "<group>"; };
+		88327A4715A3372400DB8F3A /* GeoJSONPointTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPointTests.m; path = ../../parser/tests/GeoJSONPointTests.m; sourceTree = "<group>"; wrapsLines = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		883279FC15A334CA00DB8F3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A0415A334CA00DB8F3A /* UIKit.framework in Frameworks */,
+				88327A0615A334CA00DB8F3A /* Foundation.framework in Frameworks */,
+				88327A0815A334CA00DB8F3A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88327A1C15A334CA00DB8F3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A2215A334CA00DB8F3A /* SenTestingKit.framework in Frameworks */,
+				88327A2315A334CA00DB8F3A /* UIKit.framework in Frameworks */,
+				88327A2415A334CA00DB8F3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		883279F415A334C900DB8F3A = {
+			isa = PBXGroup;
+			children = (
+				88327A3D15A3363F00DB8F3A /* Parser */,
+				88327A0915A334CA00DB8F3A /* GeoJSONParserSample */,
+				88327A2715A334CA00DB8F3A /* GeoJSONParserSampleTests */,
+				88327A0215A334CA00DB8F3A /* Frameworks */,
+				88327A0015A334CA00DB8F3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88327A0015A334CA00DB8F3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				883279FF15A334CA00DB8F3A /* GeoJSONParserSample.app */,
+				88327A2015A334CA00DB8F3A /* GeoJSONParserSampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88327A0215A334CA00DB8F3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88327A0315A334CA00DB8F3A /* UIKit.framework */,
+				88327A0515A334CA00DB8F3A /* Foundation.framework */,
+				88327A0715A334CA00DB8F3A /* CoreGraphics.framework */,
+				88327A2115A334CA00DB8F3A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88327A0915A334CA00DB8F3A /* GeoJSONParserSample */ = {
+			isa = PBXGroup;
+			children = (
+				88327A1215A334CA00DB8F3A /* AppDelegate.h */,
+				88327A1315A334CA00DB8F3A /* AppDelegate.m */,
+				88327A1515A334CA00DB8F3A /* ViewController.h */,
+				88327A1615A334CA00DB8F3A /* ViewController.m */,
+				88327A1815A334CA00DB8F3A /* ViewController.xib */,
+				88327A0A15A334CA00DB8F3A /* Supporting Files */,
+			);
+			path = GeoJSONParserSample;
+			sourceTree = "<group>";
+		};
+		88327A0A15A334CA00DB8F3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88327A0B15A334CA00DB8F3A /* GeoJSONParserSample-Info.plist */,
+				88327A0C15A334CA00DB8F3A /* InfoPlist.strings */,
+				88327A0F15A334CA00DB8F3A /* main.m */,
+				88327A1115A334CA00DB8F3A /* GeoJSONParserSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88327A2715A334CA00DB8F3A /* GeoJSONParserSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				88327A4615A3372400DB8F3A /* GeoJSONPointTests.h */,
+				88327A4715A3372400DB8F3A /* GeoJSONPointTests.m */,
+				88327A4415A3372400DB8F3A /* GeoJSONMultiPointTests.h */,
+				88327A4515A3372400DB8F3A /* GeoJSONMultiPointTests.m */,
+				88327A2815A334CA00DB8F3A /* Supporting Files */,
+			);
+			path = GeoJSONParserSampleTests;
+			sourceTree = "<group>";
+		};
+		88327A2815A334CA00DB8F3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88327A2915A334CA00DB8F3A /* GeoJSONParserSampleTests-Info.plist */,
+				88327A2A15A334CA00DB8F3A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88327A3D15A3363F00DB8F3A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				88327A4015A3365700DB8F3A /* GeoJSONPoint.h */,
+				88327A4115A3365700DB8F3A /* GeoJSONPoint.m */,
+				88327A3E15A3365700DB8F3A /* GeoJSONMultiPoint.h */,
+				88327A3F15A3365700DB8F3A /* GeoJSONMultiPoint.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		883279FE15A334CA00DB8F3A /* GeoJSONParserSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88327A3215A334CA00DB8F3A /* Build configuration list for PBXNativeTarget "GeoJSONParserSample" */;
+			buildPhases = (
+				883279FB15A334CA00DB8F3A /* Sources */,
+				883279FC15A334CA00DB8F3A /* Frameworks */,
+				883279FD15A334CA00DB8F3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoJSONParserSample;
+			productName = GeoJSONParserSample;
+			productReference = 883279FF15A334CA00DB8F3A /* GeoJSONParserSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88327A1F15A334CA00DB8F3A /* GeoJSONParserSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88327A3515A334CA00DB8F3A /* Build configuration list for PBXNativeTarget "GeoJSONParserSampleTests" */;
+			buildPhases = (
+				88327A1B15A334CA00DB8F3A /* Sources */,
+				88327A1C15A334CA00DB8F3A /* Frameworks */,
+				88327A1D15A334CA00DB8F3A /* Resources */,
+				88327A1E15A334CA00DB8F3A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88327A2615A334CA00DB8F3A /* PBXTargetDependency */,
+			);
+			name = GeoJSONParserSampleTests;
+			productName = GeoJSONParserSampleTests;
+			productReference = 88327A2015A334CA00DB8F3A /* GeoJSONParserSampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		883279F615A334C900DB8F3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 883279F915A334C900DB8F3A /* Build configuration list for PBXProject "GeoJSONParserSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 883279F415A334C900DB8F3A;
+			productRefGroup = 88327A0015A334CA00DB8F3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				883279FE15A334CA00DB8F3A /* GeoJSONParserSample */,
+				88327A1F15A334CA00DB8F3A /* GeoJSONParserSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		883279FD15A334CA00DB8F3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A0E15A334CA00DB8F3A /* InfoPlist.strings in Resources */,
+				88327A1A15A334CA00DB8F3A /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88327A1D15A334CA00DB8F3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A2C15A334CA00DB8F3A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88327A1E15A334CA00DB8F3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		883279FB15A334CA00DB8F3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A1015A334CA00DB8F3A /* main.m in Sources */,
+				88327A1415A334CA00DB8F3A /* AppDelegate.m in Sources */,
+				88327A1715A334CA00DB8F3A /* ViewController.m in Sources */,
+				88327A4215A3365700DB8F3A /* GeoJSONMultiPoint.m in Sources */,
+				88327A4315A3365700DB8F3A /* GeoJSONPoint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88327A1B15A334CA00DB8F3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88327A4815A3372400DB8F3A /* GeoJSONMultiPointTests.m in Sources */,
+				88327A4915A3372400DB8F3A /* GeoJSONPointTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88327A2615A334CA00DB8F3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 883279FE15A334CA00DB8F3A /* GeoJSONParserSample */;
+			targetProxy = 88327A2515A334CA00DB8F3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88327A0C15A334CA00DB8F3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88327A0D15A334CA00DB8F3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		88327A1815A334CA00DB8F3A /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88327A1915A334CA00DB8F3A /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		88327A2A15A334CA00DB8F3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88327A2B15A334CA00DB8F3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88327A3015A334CA00DB8F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88327A3115A334CA00DB8F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88327A3315A334CA00DB8F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeoJSONParserSample/GeoJSONParserSample-Prefix.pch";
+				INFOPLIST_FILE = "GeoJSONParserSample/GeoJSONParserSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88327A3415A334CA00DB8F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeoJSONParserSample/GeoJSONParserSample-Prefix.pch";
+				INFOPLIST_FILE = "GeoJSONParserSample/GeoJSONParserSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		88327A3615A334CA00DB8F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GeoJSONParserSample.app/GeoJSONParserSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeoJSONParserSample/GeoJSONParserSample-Prefix.pch";
+				INFOPLIST_FILE = "GeoJSONParserSampleTests/GeoJSONParserSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		88327A3715A334CA00DB8F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GeoJSONParserSample.app/GeoJSONParserSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeoJSONParserSample/GeoJSONParserSample-Prefix.pch";
+				INFOPLIST_FILE = "GeoJSONParserSampleTests/GeoJSONParserSampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		883279F915A334C900DB8F3A /* Build configuration list for PBXProject "GeoJSONParserSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88327A3015A334CA00DB8F3A /* Debug */,
+				88327A3115A334CA00DB8F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88327A3215A334CA00DB8F3A /* Build configuration list for PBXNativeTarget "GeoJSONParserSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88327A3315A334CA00DB8F3A /* Debug */,
+				88327A3415A334CA00DB8F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88327A3515A334CA00DB8F3A /* Build configuration list for PBXNativeTarget "GeoJSONParserSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88327A3615A334CA00DB8F3A /* Debug */,
+				88327A3715A334CA00DB8F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 883279F615A334C900DB8F3A /* Project object */;
+}
