@@ -61,6 +61,11 @@
 }
 
 
++ (bool) isType:(NSString*)type
+{
+    return [@"MultiLineString" isEqualToString:type] || [@"Polygon" isEqualToString:type];
+}
+
 
 - (void) dealloc
 {

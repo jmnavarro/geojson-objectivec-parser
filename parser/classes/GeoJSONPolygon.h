@@ -25,5 +25,6 @@
 - (GeoJSONPoint*) vertexAt:(int)index;
 - (GeoJSONMultiPoint*) holeAt:(int)index;
 
++ (bool) isType:(NSString*)type;
 
 @end

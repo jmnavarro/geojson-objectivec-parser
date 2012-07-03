@@ -31,4 +31,9 @@
     return self;
 }
 
++ (bool) isType:(NSString*)type
+{
+    return [@"Point" isEqualToString:type];
+}
+
 @end

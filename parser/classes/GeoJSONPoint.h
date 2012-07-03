@@ -16,4 +16,6 @@
 
 - (id) initWithGeoJSONCoordinates:(NSArray*)coord;
 
++ (bool) isType:(NSString*)type;
+
 @end

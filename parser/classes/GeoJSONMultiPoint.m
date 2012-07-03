@@ -43,6 +43,13 @@
     return _points ? _points.count : -1;
 }
 
+
++ (bool) isType:(NSString*)type
+{
+    return [@"MultiPoint" isEqualToString:type] || [@"LineString" isEqualToString:type];
+}
+
+
 - (void) dealloc
 {
     [_points release];

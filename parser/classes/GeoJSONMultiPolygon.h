@@ -1,5 +1,5 @@
 //
-//  GeoJSONMultiPoint.h
+//  GeoJSONMultiPolygon.h
 //  geojson-parser
 //
 //  Created by JM on 03/07/12.
@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class GeoJSONPoint;
+@class GeoJSONPolygon;
 
-@interface GeoJSONMultiPoint : NSObject
+@interface GeoJSONMultiPolygon : NSObject
 {
-    NSArray* _points;
+    NSArray* _polygons;
 }
 
 @property (nonatomic, readonly) int count;
 
 - (id) initWithGeoJSONCoordinates:(NSArray*)coords;
-- (GeoJSONPoint*) pointAt:(int)index;
+- (GeoJSONPolygon*) polygonAt:(int)index;
 
 + (bool) isType:(NSString*)type;
 
