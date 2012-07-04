@@ -24,7 +24,10 @@
 - (bool) createObject:(NSDictionary*)geojson
 {
     NSString *objType = [geojson objectForKey:@"type"];
+
     _type = [self geoJSONTypeFromString:objType];
+    [_object release]; _object = nil;
+
     NSArray* coord = [geojson objectForKey:@"coordinates"];
     switch (_type) {
         case GeoJSONType_GeometryPoint:
@@ -54,6 +57,7 @@
             _object = [[GeoJSONFeatureCollection alloc] initWithGeoJSONFeatureCollection:geojson];
             break;
         default:
+            _type = GeoJSONType_Undefined;
             _object = nil;
             break;
     }

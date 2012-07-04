@@ -231,4 +231,67 @@
 
 
 
+- (void)testShouldReusingSameFactory
+{
+    // same factory
+    _fixture = [[GeoJSONFactory alloc] init];
+
+    // first create: point
+    NSArray *coord1 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:0.5], [NSNumber numberWithDouble:0.5], nil];
+    NSDictionary *geom1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"Point", @"type",
+                          coord1, @"coordinates",
+                          nil];
+    
+    STAssertTrue([_fixture createObject:geom1], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_GeometryPoint, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONPoint class]], @"Object instance is not valid");
+    
+    // second object: multipoint
+    NSArray *p1 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:102.0], [NSNumber numberWithDouble:0.5], nil];
+    NSArray *p2 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:0.25], nil];
+    NSArray *coord2 = [NSArray arrayWithObjects:p1, p2, nil];
+    NSDictionary *geom2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"MultiPoint", @"type",
+                          coord2, @"coordinates",
+                          nil];
+
+    STAssertTrue([_fixture createObject:geom2], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_GeometryMultiPoint, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONMultiPoint class]], @"Object instance is not valid");
+}
+
+
+- (void)testShouldReusingSameFactoryWithInvalidObject
+{
+    // same factory
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    // first create: point
+    NSArray *coord1 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:0.5], [NSNumber numberWithDouble:0.5], nil];
+    NSDictionary *geom1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"Point", @"type",
+                           coord1, @"coordinates",
+                           nil];
+    
+    STAssertTrue([_fixture createObject:geom1], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_GeometryPoint, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONPoint class]], @"Object instance is not valid");
+    
+    // second object: invalid
+    NSDictionary *geom2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"INVALID_TYPE", @"type",
+                           @"foo", @"coordinates",
+                           nil];
+    
+    STAssertFalse([_fixture createObject:geom2], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_Undefined, _fixture.type, @"Object type is not valid");
+    STAssertNil(_fixture.object, @"Object instance is not valid");
+}
+
+
 @end
