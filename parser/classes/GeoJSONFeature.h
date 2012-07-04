@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GeoJSONParser.h"
+#import "GeoJSONFactory.h"
 
 @interface GeoJSONFeature : NSObject
 
@@ -17,5 +17,7 @@
 @property (nonatomic, readonly) NSDictionary* properies;
 
 - (id) initWithGeoJSONFeature:(NSDictionary*)feat;
+
++ (bool) isType:(NSString*)type;
 
 @end

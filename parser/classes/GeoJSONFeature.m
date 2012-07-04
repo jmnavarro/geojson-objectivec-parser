@@ -7,7 +7,7 @@
 //
 
 #import "GeoJSONFeature.h"
-#import "GeoJSONParser.h"
+#import "GeoJSONFactory.h"
 
 
 @implementation GeoJSONFeature
@@ -29,9 +29,9 @@
         if (!geom || !_properies) {
             self = nil;
         } else {
-            GeoJSONParser *parser = [[GeoJSONParser alloc] init];
+            GeoJSONFactory *parser = [[GeoJSONFactory alloc] init];
             
-            if ([parser parse:geom]) {
+            if ([parser createObject:geom]) {
                 _geometryType = parser.type;
                 _geometry = [parser.object retain];
             } else {
@@ -43,6 +43,13 @@
     }
     return self;
 }
+
+
++ (bool) isType:(NSString*)type
+{
+    return [@"Feature" isEqualToString:type];
+}
+
 
 - (void) dealloc
 {
