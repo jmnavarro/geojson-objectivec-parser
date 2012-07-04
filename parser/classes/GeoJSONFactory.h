@@ -19,6 +19,8 @@ typedef enum {
     GeoJSONType_FeatureCollection
 } GeoJSONObjectType;
 
+GeoJSONObjectType GeoJSONTypeFromString(NSString* str);
+NSString* NSStringFromGeoJSONType(GeoJSONObjectType type);
 
 @interface GeoJSONFactory : NSObject
 

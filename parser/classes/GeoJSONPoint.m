@@ -36,4 +36,9 @@
     return [@"Point" isEqualToString:type];
 }
 
+- (NSString*) description
+{
+    return [NSString stringWithFormat:@"Point[lat=%f, lng=%f, alt=%f]", _longitude, _latitude, _altitude, nil];
+}
+
 @end

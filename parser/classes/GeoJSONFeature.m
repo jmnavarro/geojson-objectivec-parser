@@ -50,6 +50,16 @@
     return [@"Feature" isEqualToString:type];
 }
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"Feature(id=%@)[", _featureId == nil ? @"nil" : _featureId, nil];
+    [str appendFormat:@"\n\tType=%@", NSStringFromGeoJSONType(_geometryType)];
+    [str appendFormat:@"\n\tGeom=[%@]\n]", [_geometry description]];
+    return [NSString stringWithString:str];
+}
+
+
 
 - (void) dealloc
 {

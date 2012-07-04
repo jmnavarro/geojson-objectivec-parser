@@ -67,6 +67,21 @@
 }
 
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"GeometryCollection(count=%d)[", self.count, nil];
+    int i = 0;
+    for (id g in _geometries) {
+        [str appendFormat:@"\n\tGeometry %d (type=%@): %@", i, NSStringFromGeoJSONType([self typeAt:i]), [g description]];
+        i++;
+    }
+    [str appendFormat:@"\n]"];
+    return [NSString stringWithString:str];
+}
+
+
+
 - (void) dealloc
 {
     [_geometries release];

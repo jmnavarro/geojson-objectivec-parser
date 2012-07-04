@@ -49,6 +49,18 @@
     return [@"MultiPolygon" isEqualToString:type];
 }
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"MultiPolygon(polygons=%d)[", self.count, nil];
+    for (int i = 0; i < _polygons.count; ++i) {
+        GeoJSONPolygon *p = [self polygonAt:i];
+        [str appendFormat:@"\n\tPolygon %d: %@", i, [p description]];
+    }
+    [str appendFormat:@"\n]"];
+    return [NSString stringWithString:str];
+}
+
 
 - (void) dealloc
 {

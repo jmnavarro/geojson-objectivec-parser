@@ -67,6 +67,20 @@
 }
 
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"Polygon(vertices=%d)[\n\tVertices:", self.vertexCount, nil];
+    for (int i = 0; i < _points.count; ++i) {
+        GeoJSONPoint *p = [self vertexAt:i];
+        [str appendFormat:@"\n\t\tPoint %d: %@", i, [p description]];
+    }
+    [str appendFormat:@"\n]"];
+    //TODO holes
+    return [NSString stringWithString:str];
+}
+
+
 - (void) dealloc
 {
     [_points release];

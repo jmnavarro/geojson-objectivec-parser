@@ -50,6 +50,19 @@
 }
 
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"MultiPoint(count=%d)[", self.count, nil];
+    int i = 0;
+    for (GeoJSONPoint *p in _points) {
+        [str appendFormat:@"\n\tPoint %d: %@", i++, [p description]];
+    }
+    [str appendFormat:@"\n]"];
+    return [NSString stringWithString:str];
+}
+
+
 - (void) dealloc
 {
     [_points release];

@@ -55,6 +55,18 @@
     return [@"FeatureCollection" isEqualToString:type];
 }
 
+- (NSString*) description
+{
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    [str appendFormat:@"FeatureCollection(count=%d)[", self.count, nil];
+    int i = 0;
+    for (GeoJSONFeature *f in _features) {
+        [str appendFormat:@"\n\tFeature %d: %@", i++, [f description]];
+    }
+    [str appendFormat:@"\n]"];
+    return [NSString stringWithString:str];
+}
+
 
 - (void) dealloc
 {

@@ -18,6 +18,54 @@
 #import "SBJsonParser.h"
 
 
+
+GeoJSONObjectType GeoJSONTypeFromString(NSString* str)
+{
+    if ([GeoJSONPoint isType:str]) {
+        return GeoJSONType_GeometryPoint;
+    } else if ([GeoJSONMultiPoint isType:str]) {
+        return GeoJSONType_GeometryMultiPoint;
+    } else if ([GeoJSONPolygon isType:str]) {
+        return GeoJSONType_GeometryPolygon;
+    } else if ([GeoJSONMultiPolygon isType:str]) {
+        return GeoJSONType_GeometryMultiPolygon;
+    } else if ([GeoJSONFeature isType:str]) {
+        return GeoJSONType_Feature;
+    } else if ([GeoJSONFeatureCollection isType:str]) {
+        return GeoJSONType_FeatureCollection;
+    } else if ([GeoJSONGeometryCollection isType:str]) {
+        return GeoJSONType_GeometryCollection;
+    }
+    
+    return GeoJSONType_Undefined;
+}
+
+NSString* NSStringFromGeoJSONType(GeoJSONObjectType type)
+{
+    switch (type) {
+        case GeoJSONType_GeometryPoint:
+            return @"Point";
+            break;
+        case GeoJSONType_GeometryMultiPoint:
+            return @"MultiPoint";
+        case GeoJSONType_GeometryPolygon:
+            return @"Polygon";
+        case GeoJSONType_GeometryMultiPolygon:
+            return @"MultiPolygon";
+        case GeoJSONType_GeometryCollection:
+            return @"GeometryCollection";
+        case GeoJSONType_Feature:
+            return @"Feature";
+        case GeoJSONType_FeatureCollection:
+            return @"FeatureCollection";
+        case GeoJSONType_Undefined:
+            return @"Undefined";
+    }
+    return @"Unknown";
+}
+
+
+
 @implementation GeoJSONFactory
 
 @synthesize object = _object;
@@ -59,7 +107,7 @@
     
     NSString *objType = [geojson objectForKey:@"type"];
 
-    _type = [self geoJSONTypeFromString:objType];
+    _type = GeoJSONTypeFromString(objType);
     [_object release]; _object = nil;
 
     NSArray* coord = [geojson objectForKey:@"coordinates"];
@@ -95,26 +143,7 @@
 }
 
 
-- (GeoJSONObjectType) geoJSONTypeFromString:(NSString*)str
-{
-    if ([GeoJSONPoint isType:str]) {
-        return GeoJSONType_GeometryPoint;
-    } else if ([GeoJSONMultiPoint isType:str]) {
-        return GeoJSONType_GeometryMultiPoint;
-    } else if ([GeoJSONPolygon isType:str]) {
-        return GeoJSONType_GeometryPolygon;
-    } else if ([GeoJSONMultiPolygon isType:str]) {
-        return GeoJSONType_GeometryMultiPolygon;
-    } else if ([GeoJSONFeature isType:str]) {
-        return GeoJSONType_Feature;
-    } else if ([GeoJSONFeatureCollection isType:str]) {
-        return GeoJSONType_FeatureCollection;
-    } else if ([GeoJSONGeometryCollection isType:str]) {
-        return GeoJSONType_GeometryCollection;
-    }
 
-    return GeoJSONType_Undefined;
-}
                 
 - (void) dealloc
 {
