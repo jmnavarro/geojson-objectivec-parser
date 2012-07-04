@@ -345,6 +345,26 @@
 }
 
 
+- (void)testShouldWorkWithFeatureCollectionJSONStringAndNullGeometry
+{
+    NSString* json = @"{\"type\": \"FeatureCollection\",\"features\": [{\"type\": \"Feature\",\"properties\": {\"cartodb_id\": 1, \"name\": \"centro\",\"description\": \"el centro del universo\",\"created_at\": \"2012-06-21T16:56:24.827Z\",\"updated_at\": \"2012-06-21T16:56:46.903Z\"},\"geometry\": \"<null>\"}]}";
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertTrue([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_FeatureCollection, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONFeatureCollection class]], @"Object instance is not valid");
+    
+    GeoJSONFeatureCollection *coll = (GeoJSONFeatureCollection*)_fixture.object;
+    STAssertEquals(1, coll.count, @"Count is not valid");
+    GeoJSONFeature *feat = [coll featureAt:0];
+    STAssertNotNil(feat, @"Feature must be not null");
+    STAssertNil(feat.geometry, @"Geometry must be null");
+    STAssertEquals(GeoJSONType_Undefined, feat.geometryType, @"Geometry type must be undefined");
+}
+
+
 - (void)testShouldFailWithInvalidJSONString
 {
     NSString *json = @"{ \"type234\": \"GeometryCollection\",\"geometries\": [{ \"type\": \"Point\",\"coordinates\": [100.0, 0.0]},{ \"type\": \"LineString\",\"coordinates\": [ [101.0, 0.0], [102.0, 1.0] ]}]}";

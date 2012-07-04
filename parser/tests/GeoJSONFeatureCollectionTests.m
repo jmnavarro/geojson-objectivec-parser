@@ -72,8 +72,6 @@
     STAssertEquals(GeoJSONType_GeometryPoint, f2.geometryType, @"Longitude is not valid");
     
     STAssertNil([_fixture featureAt:2], @"Feature must be nil");
-
-
 }
 
 

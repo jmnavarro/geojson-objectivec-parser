@@ -24,21 +24,27 @@
         
         NSDictionary *prop = [feat objectForKey:@"properties"];
         _properties = prop != nil ? [[NSDictionary alloc] initWithDictionary:prop copyItems:YES] : nil;
-        NSDictionary *geom = [feat objectForKey:@"geometry"];
+        id geomId = [feat objectForKey:@"geometry"];
         
-        if (!geom || !_properties) {
+        if (!geomId || !_properties) {
             self = nil;
         } else {
-            GeoJSONFactory *parser = [[GeoJSONFactory alloc] init];
-            
-            if ([parser createObject:geom]) {
-                _geometryType = parser.type;
-                _geometry = [parser.object retain];
+            if ([geomId isKindOfClass:NSDictionary.class]) {
+                GeoJSONFactory *parser = [[GeoJSONFactory alloc] init];
+                
+                if ([parser createObject:(NSDictionary*)geomId]) {
+                    _geometryType = parser.type;
+                    _geometry = [parser.object retain];
+                } else {
+                    self = nil;
+                }
+                
+                [parser release];
             } else {
-                self = nil;
+                // geometry is invalid: <null>
+                _geometryType = GeoJSONType_Undefined;
+                _geometry = nil;
             }
-            
-            [parser release];
         }
     }
     return self;
