@@ -74,6 +74,21 @@
     STAssertNil([_fixture featureAt:2], @"Feature must be nil");
 }
 
+- (void) testShouldWorkWithEmptyCollection
+{
+    NSDictionary *collection = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"FeatureCollection", @"type",
+                                [NSArray array], @"features",
+                                nil];
+
+    _fixture = [[GeoJSONFeatureCollection alloc] initWithGeoJSONFeatureCollection:collection];
+    
+    STAssertNotNil(_fixture, @"FeatureCollection can't be nil");
+    STAssertEquals(0, _fixture.count, @"Count is not valid");
+    
+    STAssertNil([_fixture featureAt:0], @"Feature must be nil");
+}
+
 
 
 

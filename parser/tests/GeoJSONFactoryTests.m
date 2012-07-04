@@ -410,4 +410,21 @@
     STAssertNil(_fixture.object, @"Object instance is not valid");
 }
 
+- (void)testShouldWorkWithEmptyFeatureCollection
+{
+    NSString *json = @"{\"type\":\"FeatureCollection\",\"features\":[]}";
+
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertTrue([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_FeatureCollection, _fixture.type, @"Object type is not valid");
+    STAssertNotNil(_fixture.object, @"Object instance is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONFeatureCollection class]], @"Object instance is not valid");
+    
+    GeoJSONFeatureCollection *coll = (GeoJSONFeatureCollection*)_fixture.object;
+    STAssertEquals(0, coll.count, @"Count is not valid");
+    STAssertNil([coll featureAt:0], @"Feature must be null");
+}
+
 @end
