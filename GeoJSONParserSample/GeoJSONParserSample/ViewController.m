@@ -7,17 +7,35 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "GeoJSONFactory.h"
 
 @implementation ViewController
+
+@synthesize json, result;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (IBAction)doParse:(id)sender
+{
+    [json resignFirstResponder];
+    
+    GeoJSONFactory *factory = [[GeoJSONFactory alloc] init];
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:512];
+    
+    bool ok = [factory createObjectFromJSON:json.text];
+
+    [str appendFormat:@"Result: %@", ok ? @"ok" : @"error"];
+    [str appendFormat:@"\nObject type: %@", NSStringFromGeoJSONType(factory.type)];
+    [str appendFormat:@"\nObject description:\n\n%@", factory.object];
+    
+    result.text = str;
+    
+    [factory release];
 }
 
 - (void)viewDidUnload

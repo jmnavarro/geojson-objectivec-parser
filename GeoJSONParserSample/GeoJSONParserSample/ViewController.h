@@ -10,4 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UITextView *json;
+@property (nonatomic, retain) IBOutlet UITextView *result;
+
+
+- (IBAction)doParse:(id)sender;
 @end
