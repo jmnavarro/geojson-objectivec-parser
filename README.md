@@ -5,13 +5,13 @@ This set of Objective-C classes implements a data model for GeoJSON specificatio
 
 
 Dependencies
-=============
+----------------
 
 json-framework (https://github.com/stig/json-framework/)
 
 
 Usage
-===============
+-------------
 
 1. Clone code (with recursive
 `git clone git://github.com/jmnavarro/geojson-objectivec-parser.git --recursive`
@@ -31,12 +31,16 @@ if ([factory createObjectFromJSON:@"the json string"]) {
 
 
 TODO (feel free to pull)
-=========================
+---------------------------
 
 * More error handling (parse error)
 * Implement Coordinate Reference System Objects (http://www.geojson.org/geojson-spec.html#coordinate-reference-system-objects)
 * Support bounding boxes (http://www.geojson.org/geojson-spec.html#bounding-boxes)
 * Test on MacOS and write a sample
 * ARC aware
+
+Screeshot
+-------------------
+![Emulator showing one object tree created](https://github.com/jmnavarro/geojson-objectivec-parser/blob/master/img/ios-sample.png?raw=true)
 
 
