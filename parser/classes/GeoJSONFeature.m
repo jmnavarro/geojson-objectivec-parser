@@ -12,7 +12,7 @@
 
 @implementation GeoJSONFeature
 
-@synthesize properies = _properies;
+@synthesize properties = _properties;
 @synthesize featureId = _featureId;
 @synthesize geometry = _geometry;
 @synthesize geometryType = _geometryType;
@@ -23,10 +23,10 @@
         _featureId = [[feat objectForKey:@"id"] copy];  // optional
         
         NSDictionary *prop = [feat objectForKey:@"properties"];
-        _properies = prop != nil ? [[NSDictionary alloc] initWithDictionary:prop copyItems:YES] : nil;
+        _properties = prop != nil ? [[NSDictionary alloc] initWithDictionary:prop copyItems:YES] : nil;
         NSDictionary *geom = [feat objectForKey:@"geometry"];
         
-        if (!geom || !_properies) {
+        if (!geom || !_properties) {
             self = nil;
         } else {
             GeoJSONFactory *parser = [[GeoJSONFactory alloc] init];
@@ -64,7 +64,7 @@
 - (void) dealloc
 {
     [_featureId release];
-    [_properies release];
+    [_properties release];
     [_geometry release];
     [super dealloc];
 }

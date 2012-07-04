@@ -47,7 +47,7 @@
     STAssertEquals(GeoJSONType_GeometryPoint, _fixture.geometryType, @"Geometry type is not valid");
     STAssertTrue([@"the-id" isEqualToString:_fixture.featureId], @"Id is not valid");
     STAssertTrue([_fixture.geometry isKindOfClass:[GeoJSONPoint class]], @"Geomtry instance is not valid");
-    STAssertTrue(1 == _fixture.properies.count, @"Property count is not valid");
+    STAssertTrue(1 == _fixture.properties.count, @"Property count is not valid");
 }
 
 
@@ -71,7 +71,7 @@
     STAssertEquals(GeoJSONType_GeometryPoint, _fixture.geometryType, @"Geometry type is not valid");
     STAssertNil(_fixture.featureId, @"Id must be null");
     STAssertNotNil(_fixture.geometry, @"Geomtry instance is not valid");
-    STAssertNotNil(_fixture.properies, @"Property count is not valid");
+    STAssertNotNil(_fixture.properties, @"Property count is not valid");
 }
 
 
