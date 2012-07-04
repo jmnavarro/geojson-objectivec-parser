@@ -1,7 +1,7 @@
 geojson-objectivec-parser
 ==========================
 
-This set of Objective-C classes implements a data model for GeoJSON specification. It uses a one-to-one approach, so don't be intimidated by the amount of classes: they are just data wrappers of json objects.
+This set of Objective-C classes implements a data model for [GeoJSON specification](http://www.geojson.org/geojson-spec.html). It uses a one-to-one approach, so don't be intimidated by the amount of classes: they are just data wrappers of json objects.
 
 
 Dependencies
@@ -16,8 +16,6 @@ Usage
 1. Clone code (with recursive
 `git clone git://github.com/jmnavarro/geojson-objectivec-parser.git --recursive`
 
-`hola`
-
 2. Open copy classes from `parser/classes` to your project. Note you should copy also json-framework classes
 
 3. Use GeoJSONFactory class to parse your jsons, like this:
@@ -26,7 +24,7 @@ Usage
 
 GeoJSONFactory *factory = [[GeoJSONFactory alloc] init];
     
-if ([factory createObjectFromJSON:@"the json string"]) {
+if ([factory createObjectFromJSON:@"the geojson string"]) {
 	// parse ok
 	// factory.type contains the type of object created (GeoJSONPoint, GeoJSONFeature, etc.)
 	// factory.object contains the object of previous type
