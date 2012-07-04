@@ -13,6 +13,7 @@
 #import "GeoJSONPolygon.h"
 #import "GeoJSONMultiPolygon.h"
 #import "GeoJSONFeature.h"
+#import "GeoJSONFeatureCollection.h"
 
 @implementation GeoJSONFactoryTests
 
@@ -182,6 +183,50 @@
     
     GeoJSONFeature *feature = (GeoJSONFeature*)_fixture.object;
     STAssertEquals(GeoJSONType_GeometryPoint, feature.geometryType, @"Geometry type is not valid");
+}
+
+
+
+- (void)testShouldWorkWithFeatureCollection
+{
+    NSArray *p1 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:0.5], [NSNumber numberWithDouble:0.5], nil];
+    NSDictionary *geom1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"Point", @"type",
+                           p1, @"coordinates",
+                           nil];
+    NSDictionary *properties1 = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", nil];
+    NSDictionary *feat1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"Feature", @"type",
+                           geom1, @"geometry",
+                           properties1, @"properties",
+                           nil];
+    
+    NSArray *p2 = [NSArray arrayWithObjects:[NSNumber numberWithDouble:2.5], [NSNumber numberWithDouble:2.5], nil];
+    NSDictionary *geom2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"Point", @"type",
+                           p2, @"coordinates",
+                           nil];
+    NSDictionary *properties2 = [NSDictionary dictionaryWithObjectsAndKeys:@"value2", @"key2", nil];
+    NSDictionary *feat2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                           @"Feature", @"type",
+                           geom2, @"geometry",
+                           properties2, @"properties",
+                           nil];
+    NSArray *features = [NSArray arrayWithObjects:feat1, feat2, nil];
+    NSDictionary *collection = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"FeatureCollection", @"type",
+                                features, @"features",
+                                nil];
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertTrue([_fixture createObject:collection], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_FeatureCollection, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONFeatureCollection class]], @"Object instance is not valid");
+    
+    GeoJSONFeatureCollection *coll = (GeoJSONFeatureCollection*)_fixture.object;
+    STAssertEquals(2, coll.count, @"Count is not valid");
 }
 
 

@@ -31,6 +31,8 @@
 		88327A5F15A3A66E00DB8F3A /* GeoJSONMultiPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 88327A5115A355F600DB8F3A /* GeoJSONMultiPolygon.m */; };
 		88CBA7E415A4350A00146610 /* GeoJSONFeatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7E315A4350A00146610 /* GeoJSONFeatureTests.m */; };
 		88CBA7E815A43CDC00146610 /* GeoJSONFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7E715A43CDC00146610 /* GeoJSONFactoryTests.m */; };
+		88CBA7EC15A4440100146610 /* GeoJSONFeatureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */; };
+		88CBA7EF15A4456900146610 /* GeoJSONFeatureCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		88CBA7E315A4350A00146610 /* GeoJSONFeatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureTests.m; path = ../../parser/tests/GeoJSONFeatureTests.m; sourceTree = "<group>"; };
 		88CBA7E615A43CDC00146610 /* GeoJSONFactoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFactoryTests.h; path = ../../parser/tests/GeoJSONFactoryTests.h; sourceTree = "<group>"; };
 		88CBA7E715A43CDC00146610 /* GeoJSONFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFactoryTests.m; path = ../../parser/tests/GeoJSONFactoryTests.m; sourceTree = "<group>"; };
+		88CBA7E915A443D300146610 /* GeoJSONFeatureCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFeatureCollection.h; path = ../parser/classes/GeoJSONFeatureCollection.h; sourceTree = "<group>"; };
+		88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureCollection.m; path = ../parser/classes/GeoJSONFeatureCollection.m; sourceTree = "<group>"; };
+		88CBA7ED15A4456900146610 /* GeoJSONFeatureCollectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFeatureCollectionTests.h; path = ../../parser/tests/GeoJSONFeatureCollectionTests.h; sourceTree = "<group>"; };
+		88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureCollectionTests.m; path = ../../parser/tests/GeoJSONFeatureCollectionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,8 @@
 				88CBA7E315A4350A00146610 /* GeoJSONFeatureTests.m */,
 				88CBA7E615A43CDC00146610 /* GeoJSONFactoryTests.h */,
 				88CBA7E715A43CDC00146610 /* GeoJSONFactoryTests.m */,
+				88CBA7ED15A4456900146610 /* GeoJSONFeatureCollectionTests.h */,
+				88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */,
 				88327A2815A334CA00DB8F3A /* Supporting Files */,
 			);
 			path = GeoJSONParserSampleTests;
@@ -210,6 +218,8 @@
 				88327A5715A359FE00DB8F3A /* GeoJSONFactory.m */,
 				88327A5915A35B3900DB8F3A /* GeoJSONFeature.h */,
 				88327A5A15A35B3900DB8F3A /* GeoJSONFeature.m */,
+				88CBA7E915A443D300146610 /* GeoJSONFeatureCollection.h */,
+				88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -329,6 +339,7 @@
 				88327A4C15A33C7500DB8F3A /* GeoJSONPolygon.m in Sources */,
 				88327A5815A359FE00DB8F3A /* GeoJSONFactory.m in Sources */,
 				88327A5B15A35B3900DB8F3A /* GeoJSONFeature.m in Sources */,
+				88CBA7EC15A4440100146610 /* GeoJSONFeatureCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +353,7 @@
 				88327A5515A3561200DB8F3A /* GeoJSONMultiPolygonTests.m in Sources */,
 				88CBA7E415A4350A00146610 /* GeoJSONFeatureTests.m in Sources */,
 				88CBA7E815A43CDC00146610 /* GeoJSONFactoryTests.m in Sources */,
+				88CBA7EF15A4456900146610 /* GeoJSONFeatureCollectionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

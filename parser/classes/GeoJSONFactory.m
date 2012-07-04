@@ -12,6 +12,7 @@
 #import "GeoJSONPolygon.h"
 #import "GeoJSONMultiPolygon.h"
 #import "GeoJSONFeature.h"
+#import "GeoJSONFeatureCollection.h"
 
 
 
@@ -49,14 +50,9 @@
         case GeoJSONType_Feature:
             _object = [[GeoJSONFeature alloc] initWithGeoJSONFeature:geojson];
             break;
-/*
         case GeoJSONType_FeatureCollection:
-        {
-            NSArray* features = [geojson objectForKey:@"features"];
-            _object = [[GeoJSONFeatureCollection alloc] initWithGeoJSONFeatures:geojson];
+            _object = [[GeoJSONFeatureCollection alloc] initWithGeoJSONFeatureCollection:geojson];
             break;
-        }
-*/            
         default:
             _object = nil;
             break;
@@ -78,8 +74,10 @@
         return GeoJSONType_GeometryMultiPolygon;
     } else if ([GeoJSONFeature isType:str]) {
         return GeoJSONType_Feature;
+    } else if ([GeoJSONFeatureCollection isType:str]) {
+        return GeoJSONType_FeatureCollection;
     }
-                //"GeometryCollection", "Feature", or "FeatureCollection"
+                //"GeometryCollection"
     return GeoJSONType_Undefined;
 }
                 
