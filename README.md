@@ -16,10 +16,15 @@ Usage
 1. Clone code (with recursive
 `git clone git://github.com/jmnavarro/geojson-objectivec-parser.git --recursive`
 
+`hola`
+
 2. Open copy classes from `parser/classes` to your project. Note you should copy also json-framework classes
 
 3. Use GeoJSONFactory class to parse your jsons, like this:
-`GeoJSONFactory *factory = [[GeoJSONFactory alloc] init];
+
+```obj-c
+
+GeoJSONFactory *factory = [[GeoJSONFactory alloc] init];
     
 if ([factory createObjectFromJSON:@"the json string"]) {
 	// parse ok
@@ -27,7 +32,8 @@ if ([factory createObjectFromJSON:@"the json string"]) {
 	// factory.object contains the object of previous type
 } else {
 	// parse error. No more info, sorry
-}`
+}
+```
 
 
 TODO (feel free to pull)
