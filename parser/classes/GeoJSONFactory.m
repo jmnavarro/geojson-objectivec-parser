@@ -15,14 +15,48 @@
 #import "GeoJSONFeatureCollection.h"
 #import "GeoJSONGeometryCollection.h"
 
+#import "SBJsonParser.h"
+
 
 @implementation GeoJSONFactory
 
 @synthesize object = _object;
 @synthesize type = _type;
 
+
+
+- (NSDictionary*) parseJSON:(NSString*)json
+{
+    if (json.length == 0) {
+        return nil;
+    }
+    
+#ifdef DEBUG
+    NSLog(@"Parsing %@...", json);
+#endif
+    
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSError *error = nil;
+	NSDictionary *dict = [parser objectWithString:json error:&error];
+	[parser release];
+    
+    return (error != nil) ? nil : dict;
+}
+
+
+- (bool) createObjectFromJSON:(NSString*)geojson
+{
+    NSDictionary *dict = [self parseJSON:geojson];
+    return [self createObject:dict];
+}
+
+
 - (bool) createObject:(NSDictionary*)geojson
 {
+    if (geojson.count == 0) {
+        return NO;
+    }
+    
     NSString *objType = [geojson objectForKey:@"type"];
 
     _type = [self geoJSONTypeFromString:objType];

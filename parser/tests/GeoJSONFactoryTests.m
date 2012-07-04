@@ -265,7 +265,7 @@
 
 
 
-- (void)testShouldReusingSameFactory
+- (void)testShouldWorkReusingSameFactory
 {
     // same factory
     _fixture = [[GeoJSONFactory alloc] init];
@@ -298,7 +298,7 @@
 }
 
 
-- (void)testShouldReusingSameFactoryWithInvalidObject
+- (void)testShouldWorkReusingSameFactoryWithInvalidObject
 {
     // same factory
     _fixture = [[GeoJSONFactory alloc] init];
@@ -327,5 +327,67 @@
     STAssertNil(_fixture.object, @"Object instance is not valid");
 }
 
+
+
+- (void)testShouldWorkWithJSONString
+{
+    NSString *json = @"{ \"type\": \"GeometryCollection\",\"geometries\": [{ \"type\": \"Point\",\"coordinates\": [100.0, 0.0]},{ \"type\": \"LineString\",\"coordinates\": [ [101.0, 0.0], [102.0, 1.0] ]}]}";
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertTrue([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_GeometryCollection, _fixture.type, @"Object type is not valid");
+    STAssertTrue([_fixture.object isKindOfClass:[GeoJSONGeometryCollection class]], @"Object instance is not valid");
+    
+    GeoJSONGeometryCollection *coll = (GeoJSONGeometryCollection*)_fixture.object;
+    STAssertEquals(2, coll.count, @"Count is not valid");
+}
+
+
+- (void)testShouldFailWithInvalidJSONString
+{
+    NSString *json = @"{ \"type234\": \"GeometryCollection\",\"geometries\": [{ \"type\": \"Point\",\"coordinates\": [100.0, 0.0]},{ \"type\": \"LineString\",\"coordinates\": [ [101.0, 0.0], [102.0, 1.0] ]}]}";
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertFalse([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_Undefined, _fixture.type, @"Object type is not valid");
+    STAssertNil(_fixture.object, @"Object instance is not valid");
+}
+
+
+- (void)testShouldFailWithEmptyJSONString
+{
+    NSString *json = @"";
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertFalse([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_Undefined, _fixture.type, @"Object type is not valid");
+    STAssertNil(_fixture.object, @"Object instance is not valid");
+}
+
+- (void)testShouldFailWithNilJSONString
+{
+    NSString *json = nil;
+    
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertFalse([_fixture createObjectFromJSON:json], @"Create object is not valid");
+    
+    STAssertEquals(GeoJSONType_Undefined, _fixture.type, @"Object type is not valid");
+    STAssertNil(_fixture.object, @"Object instance is not valid");
+}
+
+- (void)testInitialStatus
+{
+    _fixture = [[GeoJSONFactory alloc] init];
+    
+    STAssertEquals(GeoJSONType_Undefined, _fixture.type, @"Object type is not valid");
+    STAssertNil(_fixture.object, @"Object instance is not valid");
+}
 
 @end

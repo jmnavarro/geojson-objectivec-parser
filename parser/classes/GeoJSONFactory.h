@@ -26,5 +26,6 @@ typedef enum {
 @property (nonatomic, readonly) GeoJSONObjectType type;
 
 - (bool) createObject:(NSDictionary*)geojson;
+- (bool) createObjectFromJSON:(NSString*)geojson;
 
 @end
