@@ -13,7 +13,7 @@
 #import "GeoJSONMultiPolygon.h"
 #import "GeoJSONFeature.h"
 #import "GeoJSONFeatureCollection.h"
-
+#import "GeoJSONGeometryCollection.h"
 
 
 @implementation GeoJSONFactory
@@ -42,14 +42,9 @@
         case GeoJSONType_GeometryMultiPolygon:
             _object = [[GeoJSONMultiPolygon alloc] initWithGeoJSONCoordinates:coord];
             break;
-/*
         case GeoJSONType_GeometryCollection:
-        {
-            NSDictionary *geometries = [geojson objectForKey:@"geometries"];
-            _object = [[GeoJSONGeometryCollection alloc] initWithGeoJSONGeometries:geometries];
+            _object = [[GeoJSONGeometryCollection alloc] initWithGeoJSONGeometryCollection:geojson];
             break;
-        }
- */
         case GeoJSONType_Feature:
             _object = [[GeoJSONFeature alloc] initWithGeoJSONFeature:geojson];
             break;
@@ -80,8 +75,10 @@
         return GeoJSONType_Feature;
     } else if ([GeoJSONFeatureCollection isType:str]) {
         return GeoJSONType_FeatureCollection;
+    } else if ([GeoJSONGeometryCollection isType:str]) {
+        return GeoJSONType_GeometryCollection;
     }
-                //"GeometryCollection"
+
     return GeoJSONType_Undefined;
 }
                 

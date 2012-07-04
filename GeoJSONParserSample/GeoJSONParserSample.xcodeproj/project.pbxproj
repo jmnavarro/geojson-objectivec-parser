@@ -33,6 +33,8 @@
 		88CBA7E815A43CDC00146610 /* GeoJSONFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7E715A43CDC00146610 /* GeoJSONFactoryTests.m */; };
 		88CBA7EC15A4440100146610 /* GeoJSONFeatureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */; };
 		88CBA7EF15A4456900146610 /* GeoJSONFeatureCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */; };
+		88CBA7F215A447AC00146610 /* GeoJSONGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7F115A447AC00146610 /* GeoJSONGeometryCollection.m */; };
+		88CBA7F515A44B7400146610 /* GeoJSONGeometryCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CBA7F415A44B7400146610 /* GeoJSONGeometryCollectionTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureCollection.m; path = ../parser/classes/GeoJSONFeatureCollection.m; sourceTree = "<group>"; };
 		88CBA7ED15A4456900146610 /* GeoJSONFeatureCollectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFeatureCollectionTests.h; path = ../../parser/tests/GeoJSONFeatureCollectionTests.h; sourceTree = "<group>"; };
 		88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureCollectionTests.m; path = ../../parser/tests/GeoJSONFeatureCollectionTests.m; sourceTree = "<group>"; };
+		88CBA7F015A447AC00146610 /* GeoJSONGeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONGeometryCollection.h; path = ../parser/classes/GeoJSONGeometryCollection.h; sourceTree = "<group>"; };
+		88CBA7F115A447AC00146610 /* GeoJSONGeometryCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONGeometryCollection.m; path = ../parser/classes/GeoJSONGeometryCollection.m; sourceTree = "<group>"; };
+		88CBA7F315A44B7400146610 /* GeoJSONGeometryCollectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONGeometryCollectionTests.h; path = ../../parser/tests/GeoJSONGeometryCollectionTests.h; sourceTree = "<group>"; };
+		88CBA7F415A44B7400146610 /* GeoJSONGeometryCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONGeometryCollectionTests.m; path = ../../parser/tests/GeoJSONGeometryCollectionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,8 @@
 				88CBA7E715A43CDC00146610 /* GeoJSONFactoryTests.m */,
 				88CBA7ED15A4456900146610 /* GeoJSONFeatureCollectionTests.h */,
 				88CBA7EE15A4456900146610 /* GeoJSONFeatureCollectionTests.m */,
+				88CBA7F315A44B7400146610 /* GeoJSONGeometryCollectionTests.h */,
+				88CBA7F415A44B7400146610 /* GeoJSONGeometryCollectionTests.m */,
 				88327A2815A334CA00DB8F3A /* Supporting Files */,
 			);
 			path = GeoJSONParserSampleTests;
@@ -214,12 +222,14 @@
 				88327A4B15A33C7500DB8F3A /* GeoJSONPolygon.m */,
 				88327A5015A355F600DB8F3A /* GeoJSONMultiPolygon.h */,
 				88327A5115A355F600DB8F3A /* GeoJSONMultiPolygon.m */,
-				88327A5615A359FE00DB8F3A /* GeoJSONFactory.h */,
-				88327A5715A359FE00DB8F3A /* GeoJSONFactory.m */,
 				88327A5915A35B3900DB8F3A /* GeoJSONFeature.h */,
 				88327A5A15A35B3900DB8F3A /* GeoJSONFeature.m */,
 				88CBA7E915A443D300146610 /* GeoJSONFeatureCollection.h */,
 				88CBA7EA15A443D300146610 /* GeoJSONFeatureCollection.m */,
+				88CBA7F015A447AC00146610 /* GeoJSONGeometryCollection.h */,
+				88CBA7F115A447AC00146610 /* GeoJSONGeometryCollection.m */,
+				88327A5615A359FE00DB8F3A /* GeoJSONFactory.h */,
+				88327A5715A359FE00DB8F3A /* GeoJSONFactory.m */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
@@ -340,6 +350,7 @@
 				88327A5815A359FE00DB8F3A /* GeoJSONFactory.m in Sources */,
 				88327A5B15A35B3900DB8F3A /* GeoJSONFeature.m in Sources */,
 				88CBA7EC15A4440100146610 /* GeoJSONFeatureCollection.m in Sources */,
+				88CBA7F215A447AC00146610 /* GeoJSONGeometryCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +365,7 @@
 				88CBA7E415A4350A00146610 /* GeoJSONFeatureTests.m in Sources */,
 				88CBA7E815A43CDC00146610 /* GeoJSONFactoryTests.m in Sources */,
 				88CBA7EF15A4456900146610 /* GeoJSONFeatureCollectionTests.m in Sources */,
+				88CBA7F515A44B7400146610 /* GeoJSONGeometryCollectionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
